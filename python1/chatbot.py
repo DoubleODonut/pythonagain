@@ -1,4 +1,4 @@
-#casdnaevnowaevjoewjnwjewgrbger
+import wikipedia
 import random
 
 
@@ -37,6 +37,10 @@ questionanswer = raw_input(randomquestion +"? " )
 
 questionwords = questionanswer.split(" ")
 for word in questionwords:
-    if word in goodanswers:print("That is good to hear" + name)
-    if word in badanswers: print("Oh no, what is the matter?" + name)
-    print(goodanswers)
+    if word in goodanswers:print("That is good to hear! " + name)
+    if word in badanswers: print("Oh dear, I hope you get better. " + name)
+while True:
+    userSuggests = raw_input("Would you like to ask me something? ")
+    finalWord = userSuggests.split(' ', -1)[-1]
+    wikipediaAnswer = (wikipedia.summary(finalWord, sentences=1))
+    print("Oh, do you mean " + wikipediaAnswer)
